@@ -1,0 +1,17 @@
+{
+	"Nations": {
+
+		"United States": {
+			"Capital": "Washington, D.C."		
+		},
+		"Japan": {
+			"Capital": "Kyoto"
+		},
+		"United Kingdom": {
+			"Capital": "London"
+		},
+		"United Arab Emirates": {
+			"Capital": "Dubai"
+		}
+	}
+}
