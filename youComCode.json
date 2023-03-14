@@ -1,0 +1,33 @@
+{
+	"appTiles": [
+		{
+			"items": [
+				{
+					"type": "title",
+					"text": "{{ Nations }}"
+				},
+				{
+					"type": "layout_list",
+					"field": "{{ dataArr }}",
+					"items": [
+						{
+							"type": "paragraph",
+							"text": "- {{ Capital }}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"api": {
+		"url": "<api> should return json of data to fill into you.com ui code",
+		"method": "GET",
+		"headers": {},
+		"params": [
+			{
+				"use_query": true,
+				"param_name": "search"
+			}
+		]
+	}
+}
