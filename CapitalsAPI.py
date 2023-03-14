@@ -10,7 +10,7 @@ import re
 app = Flask(__name__)
 api = Api(app)
 
-
+# Limitations: API is case sensitive
 class Capitals(Resource):
     # Only need GET for you.com, none of the other parts of REST
     def get(self):
