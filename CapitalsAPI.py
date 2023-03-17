@@ -6,11 +6,31 @@ import ast
 import json
 import re
 
+class PrefixMiddleware(object):
+
+    def __init__(self, app, prefix=''):
+        self.app = app
+        self.prefix = prefix
+
+    def __call__(self, environ, start_response):
+        if environ['PATH_INFO'].startswith(self.prefix):
+            environ['PATH_INFO'] = environ['PATH_INFO'][len(self.prefix):]
+            environ['SCRIPT_NAME'] = self.prefix
+            return self.app(environ, start_response)
+        else:
+            start_response('404', [('Content-Type', 'text/plain')])
+            return ["This url does not belong to the app.".encode()]
+
 # Initialize App
 app = Flask(__name__)
-app.config["APPLICATION_ROOT"] = "/you"
+app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix='/you')
 
 api = Api(app)
+
+
+@app.route("/")
+def hello():
+    return "Hello World from Flask"
 
 # Limitations: API is case sensitive
 class Capitals(Resource):
@@ -73,7 +93,7 @@ class Capitals(Resource):
         return data, 200
 
 # '/country' is entry point
-api.add_resource(Capitals, '/country')
+api.add_resource(Capitals, '/country', '/api/country')
 
 # Run app
 if __name__ == '__main__':
