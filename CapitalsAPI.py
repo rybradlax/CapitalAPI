@@ -8,6 +8,8 @@ import re
 
 # Initialize App
 app = Flask(__name__)
+app.config["APPLICATION_ROOT"] = "/you"
+
 api = Api(app)
 
 # Limitations: API is case sensitive
