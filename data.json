@@ -12,6 +12,42 @@
 		},
 		"United Arab Emirates": {
 			"Capital": "Abu Dhabi"
-		}
+		},
+		"Italy": {
+			"Capital": "Rome"
+		},
+		"France": {
+			"Capital": "Paris"
+		},
+		"Germany": {
+			"Capital": "Berlin"
+		},
+		"Austria": {
+			"Capital": "Vienna"
+		},
+		"Hungary": {
+			"Capital": "Budapest"
+		},
+		"Israel": {
+			"Capital": "Jerusalem"
+		},
+		"Turkey": {
+			"Capital": "Ankara"
+		},
+		"South Korea": {
+			"Capital": "Seoul"
+		},
+		"Philippines": {
+			"Capital": "Milan"
+		},
+		"Taiwan": {
+			"Capital": "Tapei"
+		},
+		"Ireland": {
+			"Capital": "Dublin"
+		},
+		"Spain": {
+			"Capital": "Madrid"
+		},
 	}
 }
